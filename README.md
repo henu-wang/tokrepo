@@ -14,6 +14,11 @@ Website: https://tokrepo.com
 
 ## GitHub Entry Points
 
+### CLI
+
+- Repo: https://github.com/henu-wang/tokrepo-cli
+- npm: https://www.npmjs.com/package/tokrepo
+
 ### MCP server
 
 - Repo: https://github.com/henu-wang/tokrepo-mcp-server
@@ -27,17 +32,24 @@ Website: https://tokrepo.com
 
 ## Quick Use
 
-Search TokRepo:
+Install the CLI:
 
 ```bash
-npx tokrepo search "mcp database"
-npx tokrepo search "claude code"
+npm install -g tokrepo
 ```
 
-Install from TokRepo:
+Search and install:
 
 ```bash
-npx tokrepo install <uuid-or-name>
+tokrepo search "mcp database"
+tokrepo install <name-or-uuid>
+```
+
+Or use without installing:
+
+```bash
+npx tokrepo search "claude code"
+npx tokrepo install awesome-cursor-rules
 ```
 
 Add TokRepo as an MCP server:
@@ -61,8 +73,7 @@ This repo is the canonical GitHub landing page for TokRepo so that:
 ## Links
 
 - Website: https://tokrepo.com
-- CLI: https://www.npmjs.com/package/tokrepo
-- MCP package: https://www.npmjs.com/package/tokrepo-mcp-server
+- CLI: https://github.com/henu-wang/tokrepo-cli | [npm](https://www.npmjs.com/package/tokrepo)
+- MCP server: https://github.com/henu-wang/tokrepo-mcp-server | [npm](https://www.npmjs.com/package/tokrepo-mcp-server)
 - MCP Registry listing: `io.github.henu-wang/tokrepo-mcp-server`
-- MCP repo: https://github.com/henu-wang/tokrepo-mcp-server
 - Skill repo: https://github.com/henu-wang/tokrepo-search-skill
