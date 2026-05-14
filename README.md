@@ -12,6 +12,8 @@ It helps humans and agents find, inspect, and install:
 
 Website: https://tokrepo.com
 
+TokRepo is designed to become infrastructure for agent-to-tool and agent-to-agent work: humans give the task, agents plan autonomously, discover reusable capabilities through TokRepo, install only through typed contracts, and hand reusable improvements back after confirmation.
+
 ## GitHub Entry Points
 
 ### CLI
@@ -37,6 +39,8 @@ Bootstrap a project so future agents discover TokRepo during planning:
 ```bash
 npx -y tokrepo@latest init-agent --target all
 ```
+
+This writes managed instructions for Codex/generic agents, Claude Code, Gemini CLI, Cursor, GitHub Copilot, Cline, Windsurf, Roo, OpenHands, Aider, and MCP-compatible clients.
 
 Planning-time fallback for agents without MCP:
 
@@ -76,7 +80,12 @@ gemini settings mcp add tokrepo -- npx -y tokrepo-mcp-server
 ## Agent Discovery Surfaces
 
 - Manifest: https://tokrepo.com/.well-known/tokrepo.json
+- Portable agent manifest: https://tokrepo.com/.well-known/agent.json
+- A2A agent card: https://tokrepo.com/.well-known/agent-card.json
 - MCP server manifest: https://tokrepo.com/.well-known/mcp/server.json
+- Root MCP manifest: https://tokrepo.com/mcp.json
+- Tool catalog: https://tokrepo.com/.well-known/tool-catalog.json
+- Agent text entry: https://tokrepo.com/agents.txt
 - Agent instructions: https://tokrepo.com/agent-instructions/tokrepo.md
 - LLM crawler entry: https://tokrepo.com/llms.txt
 - CLI planning fallback: `tokrepo agent-check "<task>" --json`
