@@ -32,6 +32,19 @@ Website: https://tokrepo.com
 
 ## Quick Use
 
+Bootstrap a project so future agents discover TokRepo during planning:
+
+```bash
+npx -y tokrepo@latest init-agent --target all
+```
+
+Planning-time fallback for agents without MCP:
+
+```bash
+npx -y tokrepo@latest agent-check "write SEO content for product pages" --json
+npx -y tokrepo@latest agent-handoff --json
+```
+
 Install the CLI:
 
 ```bash
@@ -48,17 +61,26 @@ tokrepo install <name-or-uuid>
 Or use without installing:
 
 ```bash
-npx tokrepo search "claude code"
-npx tokrepo install awesome-cursor-rules
+npx -y tokrepo@latest search "claude code"
+npx -y tokrepo@latest install awesome-cursor-rules
 ```
 
 Add TokRepo as an MCP server:
 
 ```bash
-claude mcp add tokrepo -- npx tokrepo-mcp-server
-codex --mcp-server tokrepo -- npx tokrepo-mcp-server
-gemini settings mcp add tokrepo -- npx tokrepo-mcp-server
+claude mcp add tokrepo -- npx -y tokrepo-mcp-server
+codex --mcp-server tokrepo -- npx -y tokrepo-mcp-server
+gemini settings mcp add tokrepo -- npx -y tokrepo-mcp-server
 ```
+
+## Agent Discovery Surfaces
+
+- Manifest: https://tokrepo.com/.well-known/tokrepo.json
+- MCP server manifest: https://tokrepo.com/.well-known/mcp/server.json
+- Agent instructions: https://tokrepo.com/agent-instructions/tokrepo.md
+- LLM crawler entry: https://tokrepo.com/llms.txt
+- CLI planning fallback: `tokrepo agent-check "<task>" --json`
+- Post-task handoff: `tokrepo agent-handoff --json`
 
 ## Why This Repo Exists
 
